@@ -3,6 +3,7 @@ const CACHE_STATIC_NAME = 'cache-v2';
 const CACHE_DYNAMIC_NAME = 'dynamic-v1';
 const CACHE_INMUTABLE_NAME = 'inmutable-v1';
 
+
 function cleanCache(cacheName, sizeItems) {
     caches.open(cacheName)
         .then(cache => {
@@ -65,7 +66,6 @@ self.addEventListener('install', evt => {
     const promiseCache = caches.open(CACHE_STATIC_NAME)
         .then(cache => {
             return cache.addAll([
-                '/',
                 'index.html',
                 'css/page.css',
                 'img/perrito.png',
